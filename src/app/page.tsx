@@ -204,9 +204,9 @@ export default function Page() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <Button 
-            variant="outline" 
-            size="sm" // Adicionada a propriedade `size` aqui
+          <Button 
+            variant="outline" 
+            size="sm"
             className="w-full justify-start gap-3 h-12 border-white/20 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover-glow transition-all duration-300"
           >
             <Plus className="w-5 h-5 text-cyan-400" />
@@ -250,7 +250,7 @@ export default function Page() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              Jarvis Command App 2.0
+              JarvisApp
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -344,7 +344,7 @@ export default function Page() {
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              className="w-24 h-24 gradient-primary rounded-full flex items-center justify-center mb-8 shadow-glow-strong animate-float"
+              className="w-24 h-24 gradient-primary rounded-full flex items-center justify-center shadow-glow-strong animate-float"
             >
               <Bot className="w-12 h-12 text-white" />
             </motion.div>
@@ -501,6 +501,8 @@ export default function Page() {
             whileTap={{ scale: 0.95 }}
           >
             <Button
+              variant="default" // Adicionado para corrigir o erro
+              size="default" // Adicionado para corrigir o erro
               onClick={sendMessage}
               disabled={!inputMessage.trim() || isTyping}
               className="gradient-primary text-white shadow-glow hover:shadow-glow-strong disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 h-12 px-6"
