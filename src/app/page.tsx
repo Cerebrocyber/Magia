@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Bot, 
-  Sparkles, 
-  MessageSquare, 
-  Users, 
-  Command, 
+import { 
+  Bot, 
+  Sparkles, 
+  MessageSquare, 
+  Users, 
+  Command, 
   Settings,
   Mic,
   MicOff,
@@ -123,7 +123,7 @@ export default function Page() {
     >
       {/* Header da Sidebar */}
       <div className="flex items-center justify-between p-6 border-b border-white/10">
-        <motion.div 
+        <motion.div 
           className="flex items-center gap-3"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export default function Page() {
           const isActive = activePanel === item.id;
           
           return (
-            <motion.div 
+            <motion.div 
               key={item.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -176,10 +176,10 @@ export default function Page() {
             >
               <Button
                 variant={isActive ? "default" : "ghost"}
-                size="sm" // Adicionada a propriedade `size` aqui
+                size="sm"
                 className={`w-full justify-start gap-3 h-12 text-left transition-all duration-300 ${
-                  isActive 
-                    ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 shadow-glow text-white' 
+                  isActive 
+                    ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 shadow-glow text-white' 
                     : 'hover:bg-white/5 hover:border-white/10 border border-transparent'
                 }`}
                 onClick={() => setActivePanel(item.id)}
@@ -204,9 +204,9 @@ export default function Page() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <Button 
-            variant="outline" 
-            size="sm" // Adicionada a propriedade `size` aqui
+          <Button 
+            variant="outline" 
+            size="sm"
             className="w-full justify-start gap-3 h-12 border-white/20 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover-glow transition-all duration-300"
           >
             <Plus className="w-5 h-5 text-cyan-400" />
@@ -217,7 +217,7 @@ export default function Page() {
 
       {/* Footer */}
       <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
-        <motion.div 
+        <motion.div 
           className="flex items-center gap-2 text-xs text-muted-foreground"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -245,7 +245,7 @@ export default function Page() {
             >
               <Menu className="w-5 h-5" />
             </Button>
-            <motion.h1 
+            <motion.h1 
               className="text-2xl font-bold text-gradient-cosmic"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -257,11 +257,11 @@ export default function Page() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <Badge 
+              <Badge 
                 variant={currentMode === 'pro' ? 'default' : 'secondary'}
                 className={`${
-                  currentMode === 'pro' 
-                    ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-glow' 
+                  currentMode === 'pro' 
+                    ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-glow' 
                     : 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-glow'
                 } border-0`}
               >
@@ -281,8 +281,8 @@ export default function Page() {
                 size="sm"
                 onClick={() => setIsVoiceActive(!isVoiceActive)}
                 className={`${
-                  isVoiceActive 
-                    ? 'bg-gradient-to-r from-red-500 to-pink-500 animate-pulse-glow shadow-glow-strong' 
+                  isVoiceActive 
+                    ? 'bg-gradient-to-r from-red-500 to-pink-500 animate-pulse-glow shadow-glow-strong' 
                     : 'hover:bg-white/10 hover-glow'
                 } transition-all duration-300`}
               >
@@ -326,8 +326,8 @@ export default function Page() {
                 onClick={toggleTheme}
                 className="hover:bg-white/10 hover-glow transition-all duration-300"
               >
-                {theme === 'dark' ? 
-                  <Sun className="w-5 h-5 text-yellow-400" /> : 
+                {theme === 'dark' ? 
+                  <Sun className="w-5 h-5 text-yellow-400" /> : 
                   <Moon className="w-5 h-5 text-blue-400" />
                 }
               </Button>
@@ -348,7 +348,7 @@ export default function Page() {
             >
               <Bot className="w-12 h-12 text-white" />
             </motion.div>
-            <motion.h3 
+            <motion.h3 
               className="text-3xl font-bold mb-3 text-gradient-cosmic animate-neon-pulse"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -356,7 +356,7 @@ export default function Page() {
             >
               Olá! Como posso ajudar?
             </motion.h3>
-            <motion.p 
+            <motion.p 
               className="text-muted-foreground mb-10 max-w-md text-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -411,8 +411,8 @@ export default function Page() {
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                      message.role === 'user' 
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 shadow-glow' 
+                      message.role === 'user' 
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 shadow-glow' 
                         : 'gradient-primary shadow-glow-strong'
                     }`}
                   >
@@ -428,8 +428,8 @@ export default function Page() {
                     message.role === 'user' ? 'items-end' : 'items-start'
                   } flex flex-col`}>
                     <Card className={`glass-card shadow-medium transition-all duration-300 hover:shadow-strong ${
-                      message.role === 'user' 
-                        ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/30 ml-8' 
+                      message.role === 'user' 
+                        ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/30 ml-8' 
                         : 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-cyan-500/30 mr-8'
                     }`}>
                       <CardContent className="p-4">
@@ -437,9 +437,9 @@ export default function Page() {
                       </CardContent>
                     </Card>
                     <span className="text-xs text-muted-foreground mt-2 px-2">
-                      {message.timestamp.toLocaleTimeString('pt-BR', { 
-                        hour: '2-digit', 
-                        minute: '2-digit' 
+                      {message.timestamp.toLocaleTimeString('pt-BR', { 
+                        hour: '2-digit', 
+                        minute: '2-digit' 
                       })}
                     </span>
                   </div>
@@ -483,8 +483,8 @@ export default function Page() {
           <div className="flex-1">
             <Textarea
               value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              onKeyPress={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setInputMessage(e.target.value)}
+              onKeyPress={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
                   e.preventDefault();
                   sendMessage();
@@ -512,7 +512,7 @@ export default function Page() {
         
         {/* Ações Rápidas no Modo Essencial */}
         {currentMode === 'essencial' && (
-          <motion.div 
+          <motion.div 
             className="mt-4 flex flex-wrap gap-2"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -531,7 +531,7 @@ export default function Page() {
                 >
                   <Button
                     variant="outline"
-                    size="sm" // Adicionada a propriedade `size` aqui
+                    size="sm"
                     className="glass text-xs border-white/20 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover-glow transition-all duration-300"
                   >
                     <Icon className="w-3 h-3 mr-1" />
