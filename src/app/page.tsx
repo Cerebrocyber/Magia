@@ -250,7 +250,7 @@ export default function Page() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              JarvisApp
+              M.A.G.I.A.
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
