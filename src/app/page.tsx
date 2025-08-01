@@ -204,9 +204,9 @@ export default function Page() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <Button 
-            variant="outline" 
-            size="sm"
+          <Button 
+            variant="outline" 
+            size="sm" // Adicionada a propriedade `size` aqui
             className="w-full justify-start gap-3 h-12 border-white/20 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover-glow transition-all duration-300"
           >
             <Plus className="w-5 h-5 text-cyan-400" />
