@@ -176,6 +176,7 @@ export default function Page() {
             >
               <Button
                 variant={isActive ? "default" : "ghost"}
+                size="sm" // Adicionada a propriedade `size` aqui
                 className={`w-full justify-start gap-3 h-12 text-left transition-all duration-300 ${
                   isActive 
                     ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 shadow-glow text-white' 
@@ -205,6 +206,7 @@ export default function Page() {
         >
           <Button 
             variant="outline" 
+            size="sm" // Adicionada a propriedade `size` aqui
             className="w-full justify-start gap-3 h-12 border-white/20 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover-glow transition-all duration-300"
           >
             <Plus className="w-5 h-5 text-cyan-400" />
@@ -244,7 +246,7 @@ export default function Page() {
               <Menu className="w-5 h-5" />
             </Button>
             <motion.h1 
-              className="text-2xl font-bold text-gradient"
+              className="text-2xl font-bold text-gradient-cosmic"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
             >
@@ -529,7 +531,7 @@ export default function Page() {
                 >
                   <Button
                     variant="outline"
-                    size="sm"
+                    size="sm" // Adicionada a propriedade `size` aqui
                     className="glass text-xs border-white/20 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover-glow transition-all duration-300"
                   >
                     <Icon className="w-3 h-3 mr-1" />
