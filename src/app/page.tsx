@@ -37,7 +37,7 @@ import { Avatar, AvatarFallback } from '../components/ui/avatar';
 const initialMessages = [
   {
     id: '1',
-    content: 'Olá! Sou o Jarvis, seu assistente de IA. Como posso ajudar você hoje?',
+    content: 'Olá! Sou o M.A.G.I.A., seu assistente de IA. Como posso ajudar você hoje?',
     role: 'assistant',
     timestamp: new Date(),
   }
@@ -133,7 +133,7 @@ export default function Page() {
             <Bot className="w-7 h-7 text-white" />
           </div>
           <div>
-            <h2 className="font-bold text-xl text-gradient animate-neon-pulse">Jarvis</h2>
+            <h2 className="font-bold text-xl text-gradient animate-neon-pulse">M.A.G.I.A.</h2>
             <div className="flex items-center gap-1">
               {currentMode === 'pro' ? (
                 <Crown className="w-3 h-3 text-yellow-400" />
