@@ -224,7 +224,7 @@ export default function Page() {
           transition={{ delay: 0.6 }}
         >
           <Sparkles className="w-3 h-3 text-cyan-400" />
-          <span>PPowered by AI · Created by Carilo Lemos</span>
+          <span>Powered by AI · Created by Carilo Lemos</span>
         </motion.div>
       </div>
     </motion.div>
