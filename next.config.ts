@@ -1,3 +1,4 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -25,7 +26,6 @@ const nextConfig: NextConfig = {
   env: {
     CUSTOM_KEY: 'magia-app',
   },
-  // Configuração para resolver o warning de CORS
   async headers() {
     return [
       {
