@@ -1,28 +1,27 @@
-
 modules = ["nodejs-20", "web"]
 run = "npm run dev"
 
 [nix]
 channel = "stable-25_05"
 
-[env]
-PORT = "3000"
-
 [deployment]
-run = ["sh", "-c", "npm run build && npm start"]
-build = ["sh", "-c", "npm run build"]
+run = ["sh", "-c", "npm run dev"]
 
 [[ports]]
 localPort = 3000
+
+[[ports]]
+localPort = 5000
 externalPort = 80
 
 [workflows]
-runButton = "Rodar o Magia"
+runButton = "Run M.A.G.I.A."
 
 [[workflows.workflow]]
-name = "Rodar o Magia"
+name = "Run M.A.G.I.A."
+author = 29061746
 mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev -- --hostname 0.0.0.0 --port 3000"
+args = "npm run dev -- --port 5000 --hostname 0.0.0.0"
