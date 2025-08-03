@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "M.A.G.I.A. UI",
+  title: "M.A.G.I.A.",
   description: "Interface migrada com sucesso 🎉",
 };
 
