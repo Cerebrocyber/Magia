@@ -1,0 +1,21 @@
+Error: ./tailwind.config.ts:83:13
+[1m[31mModule not found[39m[22m: Can't resolve [32m'tailwindcss-animate'[39m
+[0m [90m 81 |[39m     }[33m,[39m
+ [90m 82 |[39m   }[33m,[39m
+[31m[1m>[22m[39m[90m 83 |[39m   plugins[33m:[39m [require([32m"tailwindcss-animate"[39m)][33m,[39m
+ [90m    |[39m             [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 84 |[39m } satisfies [33mConfig[39m[33m;[39m
+ [90m 85 |[39m
+ [90m 86 |[39m [36mexport[39m [36mdefault[39m config[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+    at tr (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:20168:60)
+    at o6 (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:2952:164)
+    at iP (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:4008:32)
+    at i$ (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:4305:28)
+    at sv (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:5791:21)
+    at https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:5782:40
+    at sm (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:5783:19)
+    at sa (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:5596:23)
+    at sZ (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:6520:124)
+    at MessagePort._ (https://d43cf7e0-4dca-4905-80e2-c57220c41c74-00-1axkcw808s6pj.kirk.replit.dev/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_82a36480.js:8806:49)
