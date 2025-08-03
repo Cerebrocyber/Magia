@@ -1,0 +1,93 @@
+Fechado. Aqui vai um plano **direto e funcional** pra você substituir o `react-day-picker` e corrigir os bugs no Replit sem quebrar mais nada:
+
+---
+
+## ✅ **Plano de Substituição + Correção de Bugs no Replit**
+
+### 🔁 **1. Substituir `react-day-picker` por `react-datepicker`**
+
+**Motivo:** Compatível com `React 19`, leve, estável, estilizável com Tailwind.
+
+#### A. Remover o antigo
+
+```bash
+npm uninstall react-day-picker
+```
+
+#### B. Instalar o novo
+
+```bash
+npm install react-datepicker --legacy-peer-deps
+```
+
+#### C. Importar no seu componente
+
+```tsx
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+```
+
+#### D. Exemplo básico de uso (pra testar)
+
+```tsx
+const [startDate, setStartDate] = useState(new Date());
+<DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+```
+
+---
+
+### 🧩 **2. Resolver conflito do `tailwindcss-animate`**
+
+#### A. Instalar o plugin corretamente
+
+```bash
+npm install tailwindcss-animate --legacy-peer-deps
+```
+
+#### B. Adicionar no `tailwind.config.ts`
+
+```ts
+plugins: [require("tailwindcss-animate")],
+```
+
+---
+
+### ⚙️ **3. Corrigir execução e preview no Replit**
+
+#### `.replit` – ajustes finais:
+
+```toml
+run = "npm run dev"
+
+[deployment]
+run = ["sh", "-c", "npm run dev -- --port 3000 --hostname 0.0.0.0"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+```
+
+#### ⚠️ Replit preview abrindo várias abas?
+
+Infelizmente ainda é um bug conhecido. Por enquanto:
+
+* Evite clicar em "Preview" repetidamente.
+* Use a aba de preview única ou acesse via URL do tipo `https://MAGIA.username.repl.co`.
+
+---
+
+### 🧹 **4. Testar tudo local e no Replit**
+
+1. Rode com:
+
+```bash
+npm run dev
+```
+
+2. Acesse: `http://localhost:3000` ou use o link da preview no Replit.
+
+3. Teste o novo datepicker e verifique se o app sobe sem erro de dependência.
+
+---
+
+Quer que eu gere o código completo já com o `DatePicker` integrado pra substituir direto?
