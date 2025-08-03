@@ -4,9 +4,6 @@ run = "npm run dev"
 [nix]
 channel = "stable-25_05"
 
-[deployment]
-run = ["sh", "-c", "npm run dev"]
-
 [env]
 PORT = "3000"
 
@@ -15,22 +12,12 @@ preview = false
 
 [[ports]]
 localPort = 3000
-externalPort = 80
-
-[[ports]]
-localPort = 3001
-externalPort = 3001
-
-[[ports]]
-localPort = 5000
-externalPort = 5000
 
 [workflows]
-runButton = "Run M.A.G.I.A."
+runButton = "Rodar o Magia"
 
 [[workflows.workflow]]
-name = "Run M.A.G.I.A."
-author = 29061746
+name = "Rodar o Magia"
 mode = "sequential"
 
 [[workflows.workflow.tasks]]
