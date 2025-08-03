@@ -14,3 +14,15 @@ externalPort = 80
 [[ports]]
 localPort = 3001
 externalPort = 3001
+
+[workflows]
+runButton = "Run M.A.G.I.A."
+
+[[workflows.workflow]]
+name = "Run M.A.G.I.A."
+author = 29061746
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev -- --port 5000 --hostname 0.0.0.0"
