@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "M.A.G.I.A.",
   description: "Interface migrada com sucesso 🎉",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
