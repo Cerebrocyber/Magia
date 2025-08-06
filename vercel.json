@@ -1,3 +1,9 @@
 {
   "installCommand": "pnpm install --no-frozen-lockfile"
 }
+Vejo que você já criou o <mcfile name="vercel.json" path="c:\Users\Ultron7\Documents\GitHub\Magia\vercel.json"></mcfile>. Certifique-se de que ele contém:
+```json
+{
+  "installCommand": "pnpm install --no-frozen-lockfile"
+}
+```
