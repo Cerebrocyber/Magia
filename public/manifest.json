@@ -5,22 +5,30 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#000000",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["productivity", "utilities"],
   "icons": [
     {
-      "src": "/faviconx.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
     },
     {
-      "src": "/faviconx.ico",
+      "src": "/favicon.ico",
       "sizes": "192x192",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any maskable"
     },
     {
-      "src": "/faviconx.ico",
+      "src": "/favicon.ico",
       "sizes": "512x512",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay", "standalone"]
 }
