@@ -6,4 +6,4 @@ Vejo que você já criou o <mcfile name="vercel.json" path="c:\Users\Ultron7\Doc
 {
   "installCommand": "pnpm install --no-frozen-lockfile"
 }
-```
+```json
