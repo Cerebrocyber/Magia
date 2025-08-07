@@ -7,3 +7,15 @@ Vejo que você já criou o <mcfile name="vercel.json" path="c:\Users\Ultron7\Doc
   "installCommand": "pnpm install --no-frozen-lockfile"
 }
 ```json
+## 🚨 **Erro confirmado: vercel.json inválido**
+
+O erro de deploy no Vercel está sendo causado pelo arquivo <mcfile name="vercel.json" path="c:\Users\Ultron7\Documents\GitHub\Magia\vercel.json"></mcfile> que contém JSON malformado.
+
+## 🔧 **Solução imediata:**
+
+Substitua todo o conteúdo do arquivo `vercel.json` por:
+```json
+{
+  "installCommand": "pnpm install --no-frozen-lockfile"
+}
+```json
