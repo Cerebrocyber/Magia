@@ -1,21 +1,38 @@
 {
-  "installCommand": "pnpm install --no-frozen-lockfile"
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "functions": {
+    "app/api/**/*.js": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/manifest.json",
+      "destination": "/api/manifest"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/manifest.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    }
+  ]
 }
-Vejo que você já criou o <mcfile name="vercel.json" path="c:\Users\Ultron7\Documents\GitHub\Magia\vercel.json"></mcfile>. Certifique-se de que ele contém:
-```json
-{
-  "installCommand": "pnpm install --no-frozen-lockfile"
-}
-```json
-## 🚨 **Erro confirmado: vercel.json inválido**
-
-O erro de deploy no Vercel está sendo causado pelo arquivo <mcfile name="vercel.json" path="c:\Users\Ultron7\Documents\GitHub\Magia\vercel.json"></mcfile> que contém JSON malformado.
-
-## 🔧 **Solução imediata:**
-
-Substitua todo o conteúdo do arquivo `vercel.json` por:
-```json
-{
-  "installCommand": "pnpm install --no-frozen-lockfile"
-}
-```json
