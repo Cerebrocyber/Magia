@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Bot,
@@ -91,19 +91,31 @@ export default function Page() {
     document.documentElement.className = theme;
   }, [theme]);
 
-  // Alternar tema
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-  };
+  // Alternar tema - usando useCallback para evitar re-criação
+  const toggleTheme = useCallback(() => {
+    setTheme(prevTheme => prevTheme === "dark" ? "light" : "dark");
+  }, []);
 
-  // Alternar modo
-  const toggleMode = () => {
-    setCurrentMode(currentMode === "essencial" ? "pro" : "essencial");
-  };
+  // Alternar modo - usando useCallback para evitar re-criação
+  const toggleMode = useCallback(() => {
+    setCurrentMode(prevMode => prevMode === "essencial" ? "pro" : "essencial");
+  }, []);
 
-  // Enviar mensagem
-  const sendMessage = async () => {
+  // Handler para mudança de input - usando useCallback
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInputMessage(e.target.value);
+  }, []);
+
+  // Handler para tecla pressionada - usando useCallback
+  const handleKeyPress = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  }, []);
+
+  // Enviar mensagem - usando useCallback
+  const sendMessage = useCallback(async () => {
     if (!inputMessage.trim()) return;
 
     const userMessage = {
@@ -140,7 +152,40 @@ export default function Page() {
       },
       1000 + Math.random() * 2000,
     );
-  };
+  }, [inputMessage]);
+
+  // Menu items memorizado
+  const menuItems = useMemo(() => [
+    {
+      id: "chat",
+      label: "Chat",
+      icon: MessageSquare,
+      count: messages.length,
+      color: "text-cyan-400",
+    },
+    {
+      id: "commands",
+      label: "Comandos",
+      icon: Command,
+      color: "text-blue-400",
+    },
+    ...(currentMode === "pro"
+      ? [
+          {
+            id: "agents",
+            label: "Agentes",
+            icon: Users,
+            color: "text-purple-400",
+          },
+        ]
+      : []),
+    {
+      id: "settings",
+      label: "Configurações",
+      icon: Settings,
+      color: "text-orange-400",
+    },
+  ], [currentMode, messages.length]);
 
   // Componente da Sidebar
   const Sidebar = () => (
@@ -189,37 +234,7 @@ export default function Page() {
 
       {/* Menu de Navegação */}
       <div className="p-4 space-y-3">
-        {[
-          {
-            id: "chat",
-            label: "Chat",
-            icon: MessageSquare,
-            count: messages.length,
-            color: "text-cyan-400",
-          },
-          {
-            id: "commands",
-            label: "Comandos",
-            icon: Command,
-            color: "text-blue-400",
-          },
-          ...(currentMode === "pro"
-            ? [
-                {
-                  id: "agents",
-                  label: "Agentes",
-                  icon: Users,
-                  color: "text-purple-400",
-                },
-              ]
-            : []),
-          {
-            id: "settings",
-            label: "Configurações",
-            icon: Settings,
-            color: "text-orange-400",
-          },
-        ].map((item, index) => {
+        {menuItems.map((item, index) => {
           const Icon = item.icon;
           const isActive = activePanel === item.id;
 
@@ -560,25 +575,19 @@ export default function Page() {
           <div className="flex-1">
             <Textarea
               value={inputMessage}
-              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                setInputMessage(e.target.value)
-              }
-              onKeyPress={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  sendMessage();
-                }
-              }}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
               placeholder="Digite sua mensagem..."
               className="min-h-[60px] max-h-32 input-modern resize-none border-white/20 focus:border-cyan-500/50 bg-white/5 backdrop-blur-lg"
               disabled={isTyping}
+              autoFocus
             />
           </div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
-              variant="default" // Adicionado para corrigir o erro
-              size="default" // Adicionado para corrigir o erro
+              variant="default"
+              size="default"
               onClick={sendMessage}
               disabled={!inputMessage.trim() || isTyping}
               className="gradient-primary text-white shadow-glow hover:shadow-glow-strong disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 h-12 px-6"
